@@ -33,5 +33,18 @@ public class Practice01SquareImageView extends ImageView {
         // 然后通过计算，让宽度和高度一致
 
         // 再用 setMeasuredDimension(width, height) 来保存最终的宽度和高度
+
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+
+        if (measuredWidth > measuredHeight){
+            measuredWidth = measuredHeight;
+        }else if (measuredHeight > measuredWidth){
+            measuredHeight = measuredWidth;
+        }else{
+            //do nothing
+        }
+
+        setMeasuredDimension(measuredWidth, measuredHeight);
     }
 }
